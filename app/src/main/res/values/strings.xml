@@ -1,0 +1,63 @@
+<resources>
+    <string name="app_name">ISTEA_Android_TP_Final</string>
+    <string name="user">Usuario</string>
+    <string name="password">Contraseña</string>
+    <string name="password_confirmation">Repita su contraseña</string>
+    <string name="login">Ingresar</string>
+    <string name="register_description">Eres nuevo por aquí? Regístrate!</string>
+    <string name="register">Registrarse</string>
+    <string name="forgotten_password">Olvidó su contraseña?</string>
+    <string name="missing_username">Debe ingresar un usuario</string>
+    <string name="missing_password">Debe ingresar una contraseña</string>
+    <string name="missing_id_number">Debe ingresar un DNI</string>
+    <string name="failed_login">Usuario y/o contraseña incorrectos</string>
+    <string name="register_fail_notification">Fallo el registro del usuario, verifique y reintente</string>
+    <string name="user_exists_notification">El usuario ingresado ya existe, por favor intente con otro o ingrese con su cuenta</string>
+    <string name="passwords_dont_match_notification">Las contraseñas ingresadas no coinciden, verifique y reintente</string>
+    <string name="main_meal">Comida principal</string>
+    <string name="secondary_meal">Comida secundaria</string>
+    <string name="drink">Bebida</string>
+    <string name="ate_dessert">Ingirió postre?</string>
+    <string name="dessert">Postre</string>
+    <string name="temptation">Quería comer algo mas?</string>
+    <string name="temptation_meal">Que quería comer?</string>
+    <string name="hungry">Se quedó con hambre?</string>
+    <string name="save">Guardar</string>
+    <string name="mealtype_incomplete">Debe completar el tipo de comida</string>
+    <string name="mainmeal_incomplete">Debe completar el plato principal</string>
+    <string name="dessert_incomplete">Debe completar el postre</string>
+    <string name="temptationmeal_incomplete">Debe completar la tentación</string>
+    <string name="meal_insert_fail">No se pudo guardar, reintente más tarde</string>
+    <string name="logout">Cerrar sesión</string>
+    <string name="recover_password">Recuperar contraseña</string>
+    <string name="recover_password_fail">Error al reestablecer la contraseña, reintente más tarde</string>
+    <string name="recover_password_success">Contraseña reestablecida satisfactoriamente, ingrese para continuar</string>
+
+    <string-array name="genders">
+        <item>Masculino</item>
+        <item>Femenino</item>
+        <item>Prefiero no decirlo</item>
+    </string-array>
+
+    <string-array name="treatments">
+        <item>Anorexia</item>
+        <item>Bulimia</item>
+        <item>Obesidad</item>
+    </string-array>
+
+    <string-array name="mealType">
+        <item>Desayuno</item>
+        <item>Almuerzo</item>
+        <item>Merienda</item>
+        <item>Cena</item>
+    </string-array>
+
+    <string name="name">Nombre</string>
+    <string name="surname">Apellido</string>
+    <string name="idNumber">DNI</string>
+    <string name="gender">Género</string>
+    <string name="birthDate">Fecha de nacimiento</string>
+    <string name="location">Localidad</string>
+    <string name="treatment">Tratamiento</string>
+
+</resources>

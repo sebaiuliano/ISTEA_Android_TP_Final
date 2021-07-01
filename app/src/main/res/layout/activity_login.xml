@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="loginViewModel"
+            type="com.example.istea_android_tp_final.ui.login.LoginViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/cl_login"
+        android:background="@color/white"
+        >
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/hor_guideline_5000"
+            app:layout_constraintStart_toStartOf="@id/ver_guideline_2000"
+            app:layout_constraintEnd_toEndOf="@id/ver_guideline_8000"
+            android:layout_marginVertical="5dp"
+            android:hint="@string/user"
+            android:id="@+id/et_username"
+            android:text="@={loginViewModel.username}"
+             />
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/hor_guideline_5000"
+            app:layout_constraintStart_toStartOf="@id/ver_guideline_2000"
+            app:layout_constraintEnd_toEndOf="@id/ver_guideline_8000"
+            android:layout_marginVertical="5dp"
+            android:hint="@string/password"
+            android:id="@+id/et_password"
+            android:inputType="textPassword"
+            android:text="@={loginViewModel.password}"
+            />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/et_password"
+            app:layout_constraintStart_toStartOf="@id/ver_guideline_2000"
+            app:layout_constraintEnd_toEndOf="@id/ver_guideline_8000"
+            android:layout_margin="10dp"
+            android:id="@+id/btn_login"
+            android:text="@string/login"
+            android:onClick="@{() -> loginViewModel.onLogin()}"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/btn_login"
+            app:layout_constraintStart_toStartOf="@id/ver_guideline_2000"
+            app:layout_constraintEnd_toEndOf="@id/ver_guideline_8000"
+            android:text="@string/forgotten_password"
+            android:onClick="@{() -> loginViewModel.onRecoverPassword()}"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/ver_guideline_2000"
+            app:layout_constraintEnd_toEndOf="@id/ver_guideline_8000"
+            android:layout_margin="10dp"
+            android:id="@+id/btn_register"
+            android:text="@string/register_description"
+            android:onClick="@{() -> loginViewModel.onRegister()}"
+            />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5"
+            android:id="@+id/hor_guideline_5000" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.20"
+            android:id="@+id/ver_guideline_2000" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.80"
+            android:id="@+id/ver_guideline_8000" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
