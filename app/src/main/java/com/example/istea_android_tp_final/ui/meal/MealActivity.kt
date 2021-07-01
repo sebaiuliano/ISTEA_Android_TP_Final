@@ -1,5 +1,6 @@
 package com.example.istea_android_tp_final.ui.meal
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
@@ -11,9 +12,8 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.example.istea_android_tp_final.R
-import com.example.istea_android_tp_final.databinding.ActivityLoginBinding
 import com.example.istea_android_tp_final.databinding.ActivityMealBinding
-import com.example.istea_android_tp_final.ui.login.LoginViewModel
+import com.example.istea_android_tp_final.ui.login.LoginActivity
 import com.example.istea_android_tp_final.util.Tools
 import org.koin.android.viewmodel.ext.android.viewModel
 
@@ -132,6 +132,8 @@ class MealActivity : AppCompatActivity() {
         when (item.itemId) {
             R.id.logout -> {
                 Tools.removeFromSharedPreferences(this, "username")
+                val intent = Intent(this, LoginActivity::class.java)
+                startActivity(intent)
                 finish()
             }
             else -> { return super.onOptionsItemSelected(item) }

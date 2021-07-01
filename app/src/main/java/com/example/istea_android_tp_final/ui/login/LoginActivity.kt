@@ -98,5 +98,6 @@ class LoginActivity : AppCompatActivity() {
     private fun goMealActivity() {
         val intent = Intent(this, MealActivity::class.java)
         startActivity(intent)
+        finish()
     }
 }

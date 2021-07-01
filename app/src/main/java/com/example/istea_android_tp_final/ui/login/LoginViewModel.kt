@@ -23,17 +23,19 @@ class LoginViewModel (
     val loginMutableHandler : MutableLiveData<Boolean> = MutableLiveData()
     val recoverPasswordMutableHandler : MutableLiveData<Boolean> = MutableLiveData()
     val registerMutableHandler : MutableLiveData<Boolean> = MutableLiveData()
+    val birthDateMutableHandler : MutableLiveData<Boolean> = MutableLiveData()
     val registerFailMutableHandler : MutableLiveData<Boolean> = MutableLiveData()
     val registeredMutableHandler : MutableLiveData<Boolean> = MutableLiveData()
 
     val name : MutableLiveData<String> = MutableLiveData()
     val surname : MutableLiveData<String> = MutableLiveData()
     val idNumber : MutableLiveData<String> = MutableLiveData()
-    val birthDate : MutableLiveData<Long> = MutableLiveData()
+    val birthDate : MutableLiveData<String> = MutableLiveData()
     val location : MutableLiveData<String> = MutableLiveData()
 
     var gender = ""
     var treatment = ""
+    var birthDateLong : Long = 0L
 
     val failedLoginMutableHandler : MutableLiveData<Boolean> = MutableLiveData()
     val goMealActivityMutableHandler : MutableLiveData<Boolean> = MutableLiveData()
@@ -54,6 +56,10 @@ class LoginViewModel (
         registerMutableHandler.value = true
     }
 
+    fun onBirthDate() {
+        birthDateMutableHandler.value = true
+    }
+
     fun onConfirmRegister() {
         val user = User(
             null,
@@ -61,7 +67,7 @@ class LoginViewModel (
             surname.value ?: "",
             idNumber.value ?: "",
             gender,
-            birthDate.value ?: 0L,
+            birthDateLong,
             location.value ?: "",
             username.value ?: "",
             password.value ?: "",

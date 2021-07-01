@@ -67,6 +67,8 @@
             app:layout_constraintEnd_toEndOf="@id/ver_guideline_8000"
             android:id="@+id/et_birthDate"
             android:hint="@string/birthDate"
+            android:text="@={loginViewModel.birthDate}"
+            android:onClick="@{() -> loginViewModel.onBirthDate()}"
             />
 
         <EditText
