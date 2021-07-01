@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="loginViewModel"
+            type="com.example.istea_android_tp_final.ui.login.LoginViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:elevation="10dp"
+        >
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="@id/ver_guideline_2000"
+            app:layout_constraintEnd_toEndOf="@id/ver_guideline_8000"
+            android:id="@+id/et_name"
+            android:hint="@string/name"
+            android:text="@={loginViewModel.name}"
+            />
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/et_name"
+            app:layout_constraintStart_toStartOf="@id/ver_guideline_2000"
+            app:layout_constraintEnd_toEndOf="@id/ver_guideline_8000"
+            android:id="@+id/et_surname"
+            android:hint="@string/surname"
+            android:text="@={loginViewModel.surname}"
+            />
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/et_surname"
+            app:layout_constraintStart_toStartOf="@id/ver_guideline_2000"
+            app:layout_constraintEnd_toEndOf="@id/ver_guideline_8000"
+            android:id="@+id/et_idNumber"
+            android:hint="@string/idNumber"
+            android:text="@={loginViewModel.idNumber}"
+            />
+
+        <RadioGroup
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/et_idNumber"
+            app:layout_constraintStart_toStartOf="@id/ver_guideline_2000"
+            app:layout_constraintEnd_toEndOf="@id/ver_guideline_8000"
+            android:orientation="vertical"
+            android:id="@+id/rg_gender"
+            >
+        </RadioGroup>
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/rg_gender"
+            app:layout_constraintStart_toStartOf="@id/ver_guideline_2000"
+            app:layout_constraintEnd_toEndOf="@id/ver_guideline_8000"
+            android:id="@+id/et_birthDate"
+            android:hint="@string/birthDate"
+            />
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/et_birthDate"
+            app:layout_constraintStart_toStartOf="@id/ver_guideline_2000"
+            app:layout_constraintEnd_toEndOf="@id/ver_guideline_8000"
+            android:id="@+id/et_location"
+            android:hint="@string/location"
+            android:text="@={loginViewModel.location}"
+            />
+
+        <Spinner
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/et_location"
+            app:layout_constraintStart_toStartOf="@id/ver_guideline_2000"
+            app:layout_constraintEnd_toEndOf="@id/ver_guideline_8000"
+            android:id="@+id/spn_treatment"
+            />
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/hor_guideline_5000"
+            app:layout_constraintStart_toStartOf="@id/ver_guideline_2000"
+            app:layout_constraintEnd_toEndOf="@id/ver_guideline_8000"
+            android:id="@+id/et_username"
+            android:hint="@string/user"
+            android:text="@={loginViewModel.username}"
+            />
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/et_username"
+            app:layout_constraintStart_toStartOf="@id/ver_guideline_2000"
+            app:layout_constraintEnd_toEndOf="@id/ver_guideline_8000"
+            android:id="@+id/et_password"
+            android:hint="@string/password"
+            android:text="@={loginViewModel.password}"
+            android:inputType="textPassword"
+            />
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/et_password"
+            app:layout_constraintStart_toStartOf="@id/ver_guideline_2000"
+            app:layout_constraintEnd_toEndOf="@id/ver_guideline_8000"
+            android:id="@+id/et_password_confirmation"
+            android:hint="@string/password_confirmation"
+            android:text="@={loginViewModel.passwordConfirmation}"
+            android:inputType="textPassword"
+            />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/ver_guideline_2000"
+            app:layout_constraintEnd_toEndOf="@id/ver_guideline_8000"
+            android:layout_margin="10dp"
+            android:id="@+id/btn_register"
+            android:text="@string/register"
+            android:onClick="@{() -> loginViewModel.onConfirmRegister()}"
+            />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5"
+            android:id="@+id/hor_guideline_5000" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.20"
+            android:id="@+id/ver_guideline_2000" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.80"
+            android:id="@+id/ver_guideline_8000" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

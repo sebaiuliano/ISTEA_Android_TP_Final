@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="mealViewModel"
+            type="com.example.istea_android_tp_final.ui.meal.MealViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/cl_meal"
+        android:background="@color/white">
+
+        <Spinner
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="@id/ver_guideline_2000"
+            app:layout_constraintEnd_toEndOf="@id/ver_guideline_8000"
+            android:id="@+id/spn_meal_type"
+            android:layout_marginVertical="10dp"
+            />
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/spn_meal_type"
+            app:layout_constraintStart_toStartOf="@id/ver_guideline_2000"
+            app:layout_constraintEnd_toEndOf="@id/ver_guideline_8000"
+            android:id="@+id/et_main_meal"
+            android:hint="@string/main_meal"
+            android:text="@={mealViewModel.mainMeal}"
+            />
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/et_main_meal"
+            app:layout_constraintStart_toStartOf="@id/ver_guideline_2000"
+            app:layout_constraintEnd_toEndOf="@id/ver_guideline_8000"
+            android:id="@+id/et_secondary_meal"
+            android:hint="@string/secondary_meal"
+            android:text="@={mealViewModel.secondaryMeal}"
+            />
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/et_secondary_meal"
+            app:layout_constraintStart_toStartOf="@id/ver_guideline_2000"
+            app:layout_constraintEnd_toEndOf="@id/ver_guideline_8000"
+            android:id="@+id/et_drink"
+            android:hint="@string/drink"
+            android:text="@={mealViewModel.drink}"
+            />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/et_drink"
+            app:layout_constraintStart_toStartOf="@id/ver_guideline_2000"
+            android:id="@+id/sw_dessert"
+            android:text="@string/ate_dessert"
+            android:layout_marginTop="30dp"
+            android:visibility="gone"
+            />
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/sw_dessert"
+            app:layout_constraintStart_toStartOf="@id/ver_guideline_2000"
+            app:layout_constraintEnd_toEndOf="@id/ver_guideline_8000"
+            android:id="@+id/et_dessert"
+            android:hint="@string/dessert"
+            android:text="@={mealViewModel.dessert}"
+            android:visibility="gone"
+            />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/et_dessert"
+            app:layout_constraintStart_toStartOf="@id/ver_guideline_2000"
+            android:id="@+id/sw_temptation"
+            android:text="@string/temptation"
+            android:layout_marginTop="30dp"
+            />
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/sw_temptation"
+            app:layout_constraintStart_toStartOf="@id/ver_guideline_2000"
+            app:layout_constraintEnd_toEndOf="@id/ver_guideline_8000"
+            android:id="@+id/et_temptation"
+            android:hint="@string/temptation_meal"
+            android:visibility="gone"
+            android:text="@={mealViewModel.temptationMeal}"
+            />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/et_temptation"
+            app:layout_constraintStart_toStartOf="@id/ver_guideline_2000"
+            android:id="@+id/sw_hungry"
+            android:text="@string/hungry"
+            android:layout_marginTop="30dp"
+            />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/ver_guideline_2000"
+            app:layout_constraintEnd_toEndOf="@id/ver_guideline_8000"
+            android:layout_margin="10dp"
+            android:id="@+id/btn_save"
+            android:text="@string/save"
+            android:onClick="@{() -> mealViewModel.onSave()}"
+            />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5"
+            android:id="@+id/hor_guideline_5000" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.20"
+            android:id="@+id/ver_guideline_2000" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.80"
+            android:id="@+id/ver_guideline_8000" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
