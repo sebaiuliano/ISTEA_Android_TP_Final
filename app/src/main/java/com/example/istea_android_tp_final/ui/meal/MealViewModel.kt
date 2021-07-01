@@ -31,7 +31,6 @@ class MealViewModel(
     val mealInsertSuccessMutableHandler : MutableLiveData<Boolean> = MutableLiveData()
 
     fun onSave() {
-        //TODO agregar dateTime
         val meal = Meal(
             null,
             mealType,
