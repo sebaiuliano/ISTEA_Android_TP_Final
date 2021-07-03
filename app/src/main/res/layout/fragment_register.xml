@@ -69,6 +69,7 @@
             android:hint="@string/birthDate"
             android:text="@={loginViewModel.birthDate}"
             android:onClick="@{() -> loginViewModel.onBirthDate()}"
+            android:focusable="false"
             />
 
         <EditText
